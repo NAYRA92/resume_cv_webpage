@@ -4,9 +4,9 @@ A Web project made with Love and Flutter 💙
 It is a simple design for a personal Resume/CV.
 
 Design by: Canva.com
-View Design: [https://](https://resume.starcodedev.com/)
+View Design: [Resume/CV Web Page](https://resume.starcodedev.com/)
 
-More by me, visit: [https://](https://starcodedev.com/)
+More by me, visit: [starCode for Development](https://starcodedev.com/)
 - - - - -
 
 A few resources to get you started if this is your first Flutter project:
