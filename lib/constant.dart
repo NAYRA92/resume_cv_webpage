@@ -18,3 +18,77 @@ TextStyle txtStyl (
     fontSize: fntSz
   );
 }
+
+Widget containerOneColumn =  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            "ناهد\nشكري",
+                            textAlign: TextAlign.right,
+                            style: txtStyl(secondColorShade, FontWeight.w500, 50),),
+                          SizedBox(height: 15,),
+                          Text(
+                            "خبيرة تسويق رقمي مستقلة",
+                            textAlign: TextAlign.right,
+                            style: txtStyl(secondColorShade, FontWeight.w500, 16),)
+                        ],
+                        ),
+                        SizedBox(height: 5,),
+                      Stack(
+                        children: [
+                          Image(
+                            image: AssetImage("images/portrait1.png"),
+                            height: 350,),
+                          Positioned(
+                            right: 1,
+                            child: Image(
+                              image: AssetImage("images/star_on.png"),
+                              height: 100,),
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+
+
+Widget containerOneRow =  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Stack(
+                        children: [
+                          Image(
+                            image: AssetImage("images/portrait1.png"),
+                            height: 350,),
+                          Positioned(
+                            right: 1,
+                            child: Image(
+                              image: AssetImage("images/star_on.png"),
+                              height: 100,),
+                          ),
+                        ],
+                      ),
+                      
+                      Padding(
+                        padding: const EdgeInsets.only(right: 18.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              "ناهد\nشكري",
+                              textAlign: TextAlign.right,
+                              style: txtStyl(secondColorShade, FontWeight.w500, 100),),
+                            SizedBox(height: 15,),
+                            Text(
+                              "خبيرة تسويق رقمي مستقلة",
+                              textAlign: TextAlign.right,
+                              style: txtStyl(secondColorShade, FontWeight.w500, 16),)
+                          ],
+                          ),
+                      ),
+                    ],
+                  );

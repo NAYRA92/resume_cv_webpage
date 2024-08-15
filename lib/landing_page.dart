@@ -14,6 +14,9 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
+  final screenWidth = MediaQuery.of(context).size.width;
+  final screenHeight = MediaQuery.of(context).size.height;
+  
     return Scaffold(
       backgroundColor: mainColor,
       body: Container(
@@ -39,40 +42,9 @@ class _LandingPageState extends State<LandingPage> {
                             style: txtStyl(secondColorShade, FontWeight.w200, 14)),),
                       )
                     ],),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Stack(
-                        children: [
-                          Image(
-                            image: AssetImage("images/portrait1.png"),
-                            height: 350,),
-                          Positioned(
-                            right: 1,
-                            child: Image(
-                              image: AssetImage("images/star_on.png"),
-                              height: 100,),
-                          ),
-                        ],
-                      ),
-                      
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            "ناهد\nشكري",
-                            textAlign: TextAlign.right,
-                            style: txtStyl(secondColorShade, FontWeight.w500, 50),),
-                          SizedBox(height: 15,),
-                          Text(
-                            "خبيرة تسويق رقمي مستقلة",
-                            textAlign: TextAlign.right,
-                            style: txtStyl(secondColorShade, FontWeight.w500, 16),)
-                        ],
-                        ),
-                    ],
-                  )
+                 screenWidth <= 700 ? 
+                 containerOneColumn :
+                 containerOneRow
                 ],
               ),
             ),
@@ -238,83 +210,7 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
 
-          //fourth
-            Container(
-              height: 450,
-              color: secondColor,
-              child: Column(
-                children: [
-                  SizedBox(height: 15,),
-                          Text(
-                            "بعض من مشروعاتي السابقة",
-                            textAlign: TextAlign.right,
-                            style: txtStyl(mainColor, FontWeight.w300, 28),),
-                  SizedBox(height: 15,),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Image(
-                               image: AssetImage("images/yoga.png"),
-                               height: 250,),
-                               SizedBox(height: 5,),
-                          Text(
-                            "مركز النسور للخدمات الحياتية",
-                            textAlign: TextAlign.center,
-                            style: txtStyl(mainColor, FontWeight.w400, 18),),
-                            Text(
-                            "حملة قمت بإنتاجها لموقع تقديم خدمات حياتية",
-                            textAlign: TextAlign.center,
-                            style: txtStyl(mainColor, FontWeight.w300, 16),),
-                          ],
-                        ),
-                      ),
-                                  
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Image(
-                               image: AssetImage("images/beach.png"),
-                               height: 250,),
-                               Text(
-                            "مجموعة ملابس السباحة",
-                            textAlign: TextAlign.center,
-                            style: txtStyl(mainColor, FontWeight.w400, 18),),
-                            Text(
-                            "إعلانات رقمية لشركة ملابس شاطئية",
-                            textAlign: TextAlign.center,
-                            style: txtStyl(mainColor, FontWeight.w300, 16),),
-                          ],
-                        ),
-                      ),
-                                  
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Image(
-                               image: AssetImage("images/food.png"),
-                               height: 250,),
-                               Text(
-                            "شركة النقاء",
-                            textAlign: TextAlign.center,
-                            style: txtStyl(mainColor, FontWeight.w400, 18),),
-                            Text(
-                            "حملة سوشيال ميديا لشركة إنتاج منتجات تجميل",
-                            textAlign: TextAlign.center,
-                            style: txtStyl(mainColor, FontWeight.w300, 16),),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            //fifth
+            //fourth
             Container(
               height: 450,
               color: secondColorShade,
