@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 
 const Color mainColor = Color(0xffC2ADE0);
@@ -18,8 +19,18 @@ TextStyle txtStyl (
     fontSize: fntSz
   );
 }
+// String buttonTxt = "Improve Your Business Now";
+// String nameTxt = "NAHED SHUKRI";
+// String bioTxt = "Freelancer Marketing Expert";
+String buttonTxt = "عزز علامتك التجارية الآن";
+String nameTxt = "ناهد\nشكري";
+String bioTxt = "خبيرة تسويق رقمي مستقلة";
 
-Widget containerOneColumn =  Column(
+Widget containerOneColumn (
+  String name,
+  String bio
+){
+   return Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -27,14 +38,24 @@ Widget containerOneColumn =  Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            "ناهد\nشكري",
+                            name,
                             textAlign: TextAlign.right,
-                            style: txtStyl(secondColorShade, FontWeight.w500, 50),),
+                            style: txtStyl(
+                              secondColorShade, 
+                              FontWeight.w500, 50),)
+                                .animate()
+                                .fadeIn(
+                                 delay: Duration(milliseconds: 500)),
                           SizedBox(height: 15,),
                           Text(
-                            "خبيرة تسويق رقمي مستقلة",
+                            bio,
                             textAlign: TextAlign.right,
-                            style: txtStyl(secondColorShade, FontWeight.w500, 16),)
+                            style: txtStyl(
+                              secondColorShade, 
+                              FontWeight.w500, 16),)
+                              .animate()
+                              .fadeIn(
+                               delay: Duration(milliseconds: 500)),
                         ],
                         ),
                         SizedBox(height: 5,),
@@ -42,20 +63,32 @@ Widget containerOneColumn =  Column(
                         children: [
                           Image(
                             image: AssetImage("images/portrait1.png"),
-                            height: 350,),
+                            height: 350,)
+                            .animate()
+                            .fadeIn(
+                              delay: Duration(milliseconds: 500)),
                           Positioned(
                             right: 1,
                             child: Image(
                               image: AssetImage("images/star_on.png"),
-                              height: 100,),
+                              height: 100,)
+                                .animate()
+                                .fadeIn(
+                                 delay: Duration(milliseconds: 900)),
                           ),
                         ],
                       ),
                     ],
                   );
+}  
 
 
-Widget containerOneRow =  Row(
+Widget containerOneRow (
+  String name,
+  String bio
+){
+  
+   return Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -63,12 +96,19 @@ Widget containerOneRow =  Row(
                         children: [
                           Image(
                             image: AssetImage("images/portrait1.png"),
-                            height: 350,),
+                            height: 350,)
+                            .animate()
+                            .fadeIn(
+                              delay: Duration(milliseconds: 500)
+                            ),
                           Positioned(
                             right: 1,
                             child: Image(
                               image: AssetImage("images/star_on.png"),
-                              height: 100,),
+                              height: 100,)
+                                .animate()
+                                .fadeIn(
+                                 delay: Duration(milliseconds: 900)),
                           ),
                         ],
                       ),
@@ -79,16 +119,27 @@ Widget containerOneRow =  Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              "ناهد\nشكري",
+                              name,
                               textAlign: TextAlign.right,
-                              style: txtStyl(secondColorShade, FontWeight.w500, 100),),
+                              style: txtStyl(
+                                secondColorShade, 
+                                FontWeight.w500, 100),)
+                                .animate()
+                                .fadeIn(
+                                 delay: Duration(milliseconds: 500)),
                             SizedBox(height: 15,),
                             Text(
-                              "خبيرة تسويق رقمي مستقلة",
+                              bio,
                               textAlign: TextAlign.right,
-                              style: txtStyl(secondColorShade, FontWeight.w500, 16),)
+                              style: txtStyl(
+                                secondColorShade, 
+                                FontWeight.w500, 16),)
+                                .animate()
+                                .fadeIn(
+                                delay: Duration(milliseconds: 500)),
                           ],
                           ),
                       ),
                     ],
                   );
+}

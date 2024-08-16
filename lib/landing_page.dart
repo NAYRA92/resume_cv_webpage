@@ -12,10 +12,27 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  void translateButton (){
+
+    setState(() {
+      buttonTxt == "عزز علامتك التجارية الآن"
+      ? buttonTxt = "Improve Your Business Now"
+      : buttonTxt = "عزز علامتك التجارية الآن";
+
+      nameTxt == "ناهد\nشكري"
+      ? nameTxt = "NAHED\nSHUKRI"
+      : nameTxt = "ناهد\nشكري";
+
+      bioTxt == "خبيرة تسويق رقمي مستقلة"
+      ? bioTxt = "Freelancer Marketing Expert"
+      : bioTxt = "خبيرة تسويق رقمي مستقلة";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
   final screenWidth = MediaQuery.of(context).size.width;
-  final screenHeight = MediaQuery.of(context).size.height;
+  // final screenHeight = MediaQuery.of(context).size.height;
   
     return Scaffold(
       backgroundColor: mainColor,
@@ -27,6 +44,7 @@ class _LandingPageState extends State<LandingPage> {
               child: Column(
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         width: 250,
@@ -38,13 +56,21 @@ class _LandingPageState extends State<LandingPage> {
                         child: TextButton(
                           onPressed: (){},
                           child: Text(
-                            "عزز علامتك التجارية الآن",
+                            buttonTxt,
                             style: txtStyl(secondColorShade, FontWeight.w200, 14)),),
-                      )
+                      ),
+
+                      IconButton(
+                        onPressed: (){
+                          translateButton();
+                        },
+                        icon: Icon(
+                          Icons.translate,
+                          color: secondColorShade),)
                     ],),
                  screenWidth <= 700 ? 
-                 containerOneColumn :
-                 containerOneRow
+                 containerOneColumn(nameTxt, bioTxt) :
+                 containerOneRow(nameTxt, bioTxt)
                 ],
               ),
             ),
