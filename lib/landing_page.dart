@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:resume_cv_webpage/constant.dart';
 
 
@@ -95,7 +96,9 @@ class _LandingPageState extends State<LandingPage> {
                           Image(
                               image: AssetImage("images/star_on.png"),
                               height: 100,
-                              color: mainColorShade,),
+                              color: mainColorShade,)
+                          .animate()
+                          .fadeIn(delay: Duration(milliseconds: 500)),
                           SizedBox(height: 15,),
                           Text(
                             "من هي ناهد؟",
@@ -119,7 +122,9 @@ class _LandingPageState extends State<LandingPage> {
                     flex: 1,
                     child: Image(
                       image: AssetImage("images/portrait2.png"),
-                      height: 350,),
+                      height: 350,)
+                      .animate()
+                      .fadeIn(delay: Duration(milliseconds: 500)),
                   ),
                 ],
               ),
@@ -144,7 +149,9 @@ class _LandingPageState extends State<LandingPage> {
                           Image(
                               image: AssetImage("images/star_on.png"),
                               height: 100,
-                              color: secondColor,),
+                              color: secondColor,)
+                          .animate()
+                          .fadeIn(delay: Duration(milliseconds: 500)),
                           SizedBox(height: 15,),
                           Text(
                             "المهارات",
@@ -227,7 +234,9 @@ class _LandingPageState extends State<LandingPage> {
                           Image(
                               image: AssetImage("images/star_on.png"),
                               height: 70,
-                              color: secondColor,),
+                              color: secondColor,)
+                          .animate()
+                          .fadeIn(delay: Duration(milliseconds: 800)),
                         ],
                         ),
                     ),
@@ -244,8 +253,10 @@ class _LandingPageState extends State<LandingPage> {
                 children: [
                   SizedBox(height: 20,),
                   Image(
-                               image: AssetImage("images/many_part_star.png"),
-                               height: 70,),
+                        image: AssetImage("images/many_part_star.png"),
+                        height: 70,)
+                      .animate()
+                      .fadeIn(delay: Duration(milliseconds: 500)),
                   SizedBox(height: 10,),
                           Text(
                             "هيا نبني\nعملك معاً",
